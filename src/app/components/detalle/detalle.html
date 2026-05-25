@@ -1,0 +1,11 @@
+<h2> Detalle del producto</h2>
+
+
+@if (producto != null) {
+    <p>Nombre : {{producto.nombre}}</p>
+    <p>Precio : {{producto.precio}}</p>
+    <p>Stock : {{producto.stock}}</p>
+}@else{
+    <p>Producto no disponible</p>
+}
+<p> ID del producto es : {{id}} </p>
