@@ -1,0 +1,13 @@
+<h1>Productos</h1>
+
+<p>Estos son los nuevos productos: </p>
+
+<ul>
+    @for (producto of listaProductos; track producto.id) {
+        <li>
+            {{producto.nombre}} - ${{producto.precio}}
+            <button (click)="seleccionar(producto)">Ver Detalle</button>
+        </li>
+        
+    }
+</ul>

@@ -1,11 +1,15 @@
 <h1> {{title()}} </h1>
 
-<p>Mi nombre es {{nombre}}</p> 
-<p>Mi edad es {{edad}}</p>
 
-<ul>
-  @for(producto of productos; track producto.id){
-    <li>{{producto.nombre}}- ${{producto.precio}}</li>
-  }
-</ul>
+<app-productos [listaProductos]="productos" (productoSeleccionado)="recibirProducto($event)"/>
+
+@if (MiProductoSeleccionado !=null) {
+  <div>
+    <h3>Producto seleccionado:</h3>
+    <p>Nombre: {{MiProductoSeleccionado.nombre}}</p>
+    <p>Precio: {{MiProductoSeleccionado.precio}}</p>
+    <p>Stock: {{MiProductoSeleccionado.stock}}</p>
+  </div>
+}
+
 <router-outlet />
