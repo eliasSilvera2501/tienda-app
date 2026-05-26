@@ -1,7 +1,8 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { Producto } from '../../interfaces/producto.interface';
 import { Productos } from '../productos/productos';
 import { Router } from '@angular/router';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,21 +10,20 @@ import { Router } from '@angular/router';
   templateUrl: './inicio.html',
   styleUrl: './inicio.scss',
 })
-export class Inicio {
+export class Inicio implements OnInit{
 
 
    router=inject(Router);
 
+   productoService= inject(ProductoService)
+
   //MiProductoSeleccionado:Producto | null = null;
 
+  productos:Producto[]= [];
 
-  
- productos:Producto[]=[
-    {id:1, nombre:'Laptop', precio:4000, stock:30},
-    {id:2, nombre:'Mouse', precio:900, stock:10},
-    {id:3, nombre:'Teclado', precio:800, stock: 12}
-  
-  ];
+  ngOnInit(): void {
+      this.productos= this.productoService.getTodos();
+  }
 
 
   recibirProducto(producto: Producto ){
