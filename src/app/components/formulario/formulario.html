@@ -1,5 +1,10 @@
 <h2>Formulario</h2>
 
+<p>{{1200 | currency}}</p>
+<p>{{1200 | currency:'EUR'}}</p>
+<p>{{'hola mundo'| uppercase}}</p>
+<p>{{'HOLA MUNDO'| lowercase}}</p>
+
 <form [formGroup]="formulario" (ngSubmit)="enviar()">
 
     <div>

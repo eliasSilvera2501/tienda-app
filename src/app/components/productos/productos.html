@@ -5,7 +5,7 @@
 <ul>
     @for (producto of listaProductos; track producto.id) {
         <li>
-            {{producto.nombre}} - ${{producto.precio}}
+            {{producto.nombre}} - ${{producto.precio}} - {{producto.stock | estado:26}}
             <button (click)="seleccionar(producto)">Ver Detalle</button>
         </li>
         

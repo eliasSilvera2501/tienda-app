@@ -8,7 +8,7 @@ export class ProductoService {
 
   private productos: Producto[]=[ 
 
-    {id:1, nombre:"Laptop", precio:4000, stock:20},
+    {id:1, nombre:"Laptop", precio:4000, stock:4},
     {id:2, nombre:"Mouse", precio:900, stock:42},
     {id:3, nombre:"Teclado", precio:1000, stock:22}
 

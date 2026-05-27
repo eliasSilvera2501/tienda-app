@@ -1,9 +1,10 @@
+import { CurrencyPipe, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CurrencyPipe, UpperCasePipe, LowerCasePipe],
   templateUrl: './formulario.html',
   styleUrl: './formulario.scss',
 })
